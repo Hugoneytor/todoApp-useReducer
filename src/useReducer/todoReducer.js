@@ -8,6 +8,16 @@ export const todoReducer = (intialState, action) => {
         return todo.id !== action.payload
       }) 
       return newTodos
+    case 'toggle':
+      return intialState.map(todo=>{
+        if(todo.id === action.payload){
+          return{
+            ...todo,
+            done: !todo.done
+          }
+        }
+        return todo;
+      })
     default:
       break;
   }    

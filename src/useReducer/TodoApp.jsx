@@ -38,6 +38,14 @@ export const TodoApp = () => {
     dispatch(action);
   }
 
+  const onToggleId = (id) => {
+    const action = {
+      type: 'toggle',
+      payload: id
+    }
+    dispatch(action)
+  }
+
   return (
     <>
       <h1>Todo App: 10 <small>pendientes: 2</small></h1>
@@ -46,7 +54,7 @@ export const TodoApp = () => {
       <div className="row">
         <div className="col-7">
           {/*TODO list*/}
-          <TodoList todos={todos} deleteTodo={deleteTodo}/>
+          <TodoList todos={todos} deleteTodo={deleteTodo} onToggleId={onToggleId}/>
           {/*TODO list*/}
         </div>
         <div className="col-5">
