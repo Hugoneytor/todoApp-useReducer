@@ -17,7 +17,7 @@ export const todoReducer = (intialState, action) => {
           }
         }
         return todo;
-      })
+      }) 
     default:
       break;
   }    
